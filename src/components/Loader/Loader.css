@@ -1,0 +1,96 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #080808;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: translate(-50%,-50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%,-50%) scale(1.1); }
+}
+
+.loader-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.loader-logo {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.loader-9xm {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 12vw, 7rem);
+  font-weight: 700;
+  color: #C9A84C;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.loader-salon {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 300;
+  color: rgba(245,240,232,0.6);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.loader-tagline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.5);
+  margin-bottom: 48px;
+}
+
+.loader-bar-wrap {
+  width: 240px;
+  height: 1px;
+  background: rgba(201,168,76,0.15);
+  margin: 0 auto 12px;
+  overflow: hidden;
+}
+.loader-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #8B6914, #C9A84C, #F0C060);
+  box-shadow: 0 0 12px rgba(201,168,76,0.5);
+}
+.loader-percent {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: rgba(201,168,76,0.4);
+}
+
+.loader-corner {
+  position: absolute;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.2);
+}
+.loader-corner--tl { top: 32px; left: 32px; }
+.loader-corner--tr { top: 32px; right: 32px; }
+.loader-corner--bl { bottom: 32px; left: 32px; }
+.loader-corner--br { bottom: 32px; right: 32px; }

@@ -1,0 +1,423 @@
+.app .hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Background Image */
+.app .hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.app .hero__bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  filter: blur(2px) saturate(0.7);
+}
+
+.app .hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(212, 168, 83, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 80%, rgba(212, 168, 83, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.6) 0%, rgba(10, 10, 10, 0.3) 40%, rgba(10, 10, 10, 0.7) 100%);
+}
+
+/* Particles */
+.app .hero__particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.app .hero__particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.35), transparent 70%);
+  animation: bokeh-float linear infinite;
+  pointer-events: none;
+}
+
+/* Glowing Orbs */
+.app .hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.app .hero__orb--1 {
+  width: 280px;
+  height: 280px;
+  background: rgba(212, 168, 83, 0.1);
+  top: -80px;
+  right: -60px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.app .hero__orb--2 {
+  width: 200px;
+  height: 200px;
+  background: rgba(184, 146, 46, 0.08);
+  bottom: 10%;
+  left: -40px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.app .hero__orb--3 {
+  width: 150px;
+  height: 150px;
+  background: rgba(212, 168, 83, 0.06);
+  top: 40%;
+  right: 20%;
+  animation: float 12s ease-in-out infinite 2s;
+}
+
+/* Content */
+.app .hero__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 90px 20px 0;   /* top padding clears the fixed navbar (~60px) */
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Badge */
+.app .hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(212, 168, 83, 0.1);
+  border: 1px solid rgba(212, 168, 83, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  margin-bottom: 16px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease 0.2s both;
+}
+
+.app .hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 8px var(--success);
+  animation: pulse-gold 2s infinite;
+}
+
+/* Title Group */
+.app .hero__title-group {
+  margin-bottom: 12px;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.app .hero__pre-title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.app .hero__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.app .hero__title-cafe {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 8px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.app .hero__title-dash {
+  color: var(--gold);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.app .hero__title-007 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 12vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--gold-deep),
+    var(--gold),
+    var(--gold-light),
+    var(--gold),
+    var(--gold-deep)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  filter: drop-shadow(0 0 25px var(--gold-glow));
+}
+
+.app .hero__title-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+/* Tagline */
+.app .hero__tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-secondary);
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease 0.5s both;
+}
+
+/* Info Row */
+.app .hero__info-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  animation: fadeIn 0.8s ease 0.6s both;
+}
+
+.app .hero__info-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  backdrop-filter: blur(8px);
+}
+
+/* Food Showcase */
+.app .hero__showcase {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.7s both;
+}
+
+.app .hero__showcase-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease both;
+}
+
+.app .hero__showcase-img-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(212, 168, 83, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-base);
+  background: var(--bg-card);
+}
+
+.app .hero__showcase-img-wrap:hover {
+  border-color: var(--gold);
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 8px 24px var(--gold-glow);
+}
+
+.app .hero__showcase-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app .hero__showcase-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* Ticker */
+.app .hero__ticker {
+  overflow: hidden;
+  margin-bottom: 28px;
+  padding: 8px 0;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  animation: fadeIn 0.8s ease 0.9s both;
+}
+
+.app .hero__ticker-track {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: ticker 25s linear infinite;
+}
+
+.app .hero__ticker-item {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(212, 168, 83, 0.6);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 0 12px;
+}
+
+.app .hero__ticker-dot {
+  color: rgba(212, 168, 83, 0.3);
+  margin: 0 4px;
+  font-size: 0.55rem;
+}
+
+/* CTA Group */
+.app .hero__cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 1s both;
+}
+
+.app .hero__cta {
+  padding: 13px 28px;
+  font-size: 0.85rem;
+}
+
+.app .hero__cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 13px 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(8px);
+}
+
+.app .hero__cta-secondary:hover {
+  background: rgba(212, 168, 83, 0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Scroll Indicator */
+.app .hero__scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+  animation: float 2.5s ease-in-out infinite;
+  transition: color var(--transition-fast);
+}
+
+.app .hero__scroll-indicator:hover {
+  color: var(--gold);
+}
+
+.app .hero__scroll-text {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app .hero__title {
+    gap: 8px;
+  }
+
+  .app .hero__title-cafe {
+    letter-spacing: 4px;
+  }
+
+  .app .hero__title-007 {
+    letter-spacing: 2px;
+  }
+
+  .app .hero__cta-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .app .hero__cta,
+  .app .hero__cta-secondary {
+    width: 100%;
+    max-width: 240px;
+    justify-content: center;
+  }
+
+  .app .hero__showcase-img-wrap {
+    width: 56px;
+    height: 56px;
+  }
+
+  .app .hero__showcase {
+    gap: 10px;
+  }
+
+  .app .hero__info-pill {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .app .hero__showcase-img-wrap {
+    width: 72px;
+    height: 72px;
+  }
+}

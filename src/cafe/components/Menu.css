@@ -1,0 +1,115 @@
+.menu {
+  padding: var(--section-padding);
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.menu__categories {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 20px;
+  margin-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu__categories::-webkit-scrollbar {
+  display: none;
+}
+
+.menu__category-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.menu__category-pill:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(212, 168, 83, 0.3);
+  color: var(--gold);
+}
+
+.menu__category-pill--active {
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+  border-color: var(--gold);
+  color: #0a0a0a;
+  font-weight: 600;
+}
+
+.menu__category-pill--active:hover {
+  color: #0a0a0a;
+}
+
+.menu__category-icon {
+  font-size: 1rem;
+}
+
+.menu__count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.menu__count strong {
+  color: var(--gold);
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  transition: opacity var(--transition-fast);
+}
+
+.menu__grid--animating {
+  opacity: 0.4;
+}
+
+.menu__grid-item {
+  animation: fadeInUp 0.4s ease both;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .menu__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 900px) {
+  .menu__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .menu__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

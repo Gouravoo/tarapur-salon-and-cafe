@@ -1,0 +1,133 @@
+.app .footer {
+  background: var(--bg-secondary);
+  padding: 48px 0 24px;
+  position: relative;
+}
+
+.app .footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.app .footer__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.app .footer__brand {
+  text-align: center;
+}
+
+.app .footer__logo {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.app .footer__logo-text {
+  color: var(--text-primary);
+  letter-spacing: 2px;
+}
+
+.app .footer__logo-accent {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app .footer__tagline {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.app .footer__links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.app .footer__link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.app .footer__link-title {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.app .footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.app .footer__link:hover {
+  color: var(--gold);
+}
+
+.app .footer__divider {
+  height: 1px;
+  background: var(--glass-border);
+  margin-bottom: 20px;
+}
+
+.app .footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.app .footer__copy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.app .footer__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 600px) {
+  .app .footer__top {
+    grid-template-columns: 1fr 2fr;
+    text-align: left;
+  }
+
+  .app .footer__brand {
+    text-align: left;
+  }
+
+  .app .footer__logo {
+    justify-content: flex-start;
+  }
+}

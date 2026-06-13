@@ -1,0 +1,201 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 24px 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.navbar--scrolled {
+  padding: 14px 0;
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+}
+
+.nav-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-logo-9xm {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #C9A84C;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.nav-logo-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(201, 168, 76, 0.3);
+}
+.nav-logo-salon {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.6);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.nav-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.65);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+  padding: 4px 0;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #C9A84C;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link:hover, .nav-link--active {
+  color: #F5F0E8;
+}
+.nav-link:hover::after, .nav-link--active::after { width: 100%; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  background: #C9A84C;
+  color: #080808;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-cta:hover {
+  background: #F0C060;
+  box-shadow: 0 0 28px rgba(201,168,76,0.4);
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  color: #F5F0E8;
+  padding: 6px;
+  transition: color 0.3s;
+  z-index: 1001;
+  position: relative;
+}
+.hamburger:hover { color: #C9A84C; }
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 48px;
+}
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 600;
+  color: rgba(245, 240, 232, 0.7);
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+  transition: color 0.3s;
+}
+.mobile-link:hover { color: #C9A84C; }
+.mobile-link-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  color: #C9A84C;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+}
+.mobile-cta {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 16px 36px;
+  background: #C9A84C;
+  color: #080808;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.mobile-cta:hover { background: #F0C060; }
+.mobile-footer {
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
+}
+.mobile-footer p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(245, 240, 232, 0.25);
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 480px) {
+  .mobile-menu { padding: 80px 28px; }
+  .mobile-footer { left: 28px; }
+}

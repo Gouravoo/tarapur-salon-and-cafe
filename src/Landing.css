@@ -1,0 +1,493 @@
+/* ═══════════════════════════════════════════════════════
+   007 TARAPUR — LANDING PAGE
+════════════════════════════════════════════════════════ */
+
+.landing {
+  min-height: 100svh;
+  background: #080808;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ── Background ─────────────────────────────────────── */
+.landing-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.landing-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(180,120,40,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 40% at 50% 100%, rgba(201,168,76,0.04) 0%, transparent 50%);
+}
+.landing-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 80%);
+}
+.landing-particle {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 2px; height: 2px;
+  border-radius: 50%;
+  background: #C9A84C;
+  opacity: 0;
+  animation: lp-float var(--dur) var(--delay) ease-in-out infinite;
+}
+@keyframes lp-float {
+  0%   { opacity: 0; transform: translateY(8px); }
+  30%  { opacity: 0.7; }
+  70%  { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-24px); }
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.landing-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 24px 0;
+}
+.landing-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.landing-logo-007 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #C9A84C;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.landing-logo-tarapur {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+}
+.landing-header-sub {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.4);
+}
+
+/* ── Main ───────────────────────────────────────────── */
+.landing-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 20px;
+  gap: 48px;
+}
+
+/* Intro text */
+.landing-intro {
+  text-align: center;
+}
+.landing-intro-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+.landing-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #F5F0E8;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+.landing-title em {
+  font-style: italic;
+  color: #C9A84C;
+}
+.landing-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: rgba(245,240,232,0.5);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Choice Cards ───────────────────────────────────── */
+.landing-choices {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  width: 100%;
+  max-width: 1100px;
+  align-items: stretch;
+}
+
+.choice-card {
+  position: relative;
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 20px;
+  padding: 44px 36px 40px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.4s, opacity 0.4s;
+  background: rgba(15,15,15,0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.choice-card:hover {
+  border-color: rgba(201,168,76,0.45);
+}
+.choice-card--dimmed {
+  opacity: 0.4;
+}
+
+/* Card background shapes */
+.choice-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+}
+.choice-bg--salon {
+  background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 70%);
+}
+.choice-bg--cafe {
+  background: radial-gradient(ellipse 70% 60% at 20% 80%, rgba(180,100,30,0.08) 0%, transparent 70%);
+}
+
+/* Glow on hover */
+.choice-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.choice-card:hover .choice-glow { opacity: 1; }
+.choice-glow--salon {
+  background: linear-gradient(135deg, rgba(201,168,76,0.06), transparent 50%);
+  box-shadow: inset 0 0 60px rgba(201,168,76,0.06);
+}
+.choice-glow--cafe {
+  background: linear-gradient(225deg, rgba(180,100,30,0.07), transparent 50%);
+  box-shadow: inset 0 0 60px rgba(180,100,30,0.06);
+}
+
+.choice-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon */
+.choice-icon {
+  width: 60px; height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.choice-card:hover .choice-icon { transform: scale(1.1) rotate(-4deg); }
+.choice-icon svg { width: 28px; height: 28px; }
+.choice-icon--salon {
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: #C9A84C;
+}
+.choice-icon--cafe {
+  background: rgba(180,100,30,0.1);
+  border: 1px solid rgba(200,120,50,0.3);
+  color: #D4834C;
+}
+
+/* Number */
+.choice-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: rgba(201,168,76,0.35);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Title */
+.choice-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #F5F0E8;
+  margin-bottom: 12px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Desc */
+.choice-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  color: rgba(245,240,232,0.55);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 320px;
+}
+
+/* Tags */
+.choice-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 32px;
+  list-style: none;
+}
+.choice-tags li {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(245,240,232,0.4);
+  letter-spacing: 0.04em;
+  transition: color 0.3s;
+}
+.choice-card:hover .choice-tags li { color: rgba(245,240,232,0.65); }
+
+/* CTA */
+.choice-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.choice-cta svg { width: 16px; height: 16px; transition: transform 0.3s; }
+.choice-card:hover .choice-cta svg { transform: translateX(4px); }
+
+.choice-card--salon .choice-cta {
+  background: #C9A84C;
+  color: #080808;
+}
+.choice-card--salon:hover .choice-cta {
+  background: #F0C060;
+  box-shadow: 0 0 28px rgba(201,168,76,0.4);
+}
+.choice-card--cafe .choice-cta {
+  background: #D4834C;
+  color: #080808;
+}
+.choice-card--cafe:hover .choice-cta {
+  background: #E09A6A;
+  box-shadow: 0 0 28px rgba(212,131,76,0.4);
+}
+
+/* ── Divider ─────────────────────────────────────────── */
+.landing-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  gap: 16px;
+}
+.divider-line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.2), transparent);
+}
+.divider-or {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.4);
+  writing-mode: vertical-rl;
+  padding: 12px 0;
+}
+
+/* ── Footer ──────────────────────────────────────────── */
+.landing-footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid rgba(201,168,76,0.06);
+}
+.landing-footer p {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: rgba(245,240,232,0.18);
+  text-transform: uppercase;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+
+/* Tablet — stack vertically, compact */
+@media (max-width: 900px) {
+  .landing-choices {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    max-width: 520px;
+  }
+  .landing-divider {
+    flex-direction: row;
+    padding: 12px 0;
+  }
+  .divider-line {
+    width: auto;
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,168,76,0.2), transparent);
+  }
+  .divider-or {
+    writing-mode: horizontal-tb;
+    padding: 0 16px;
+  }
+  .choice-card { padding: 28px 24px; }
+  .choice-desc { max-width: 100%; }
+  .choice-tags { flex-direction: row; flex-wrap: wrap; gap: 5px 18px; }
+}
+
+/* Mobile — BOTH cards side by side, no scroll needed */
+@media (max-width: 600px) {
+  /* Compact header */
+  .landing-header {
+    padding: 18px 16px 0;
+  }
+  .landing-logo-007 {
+    font-size: 1.9rem;
+  }
+  .landing-logo-tarapur {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+  }
+  .landing-header-sub {
+    font-size: 0.62rem;
+    margin-top: 2px;
+  }
+
+  /* Minimal main padding */
+  .landing-main {
+    padding: 12px 10px 8px;
+    gap: 12px;
+  }
+
+  /* Hide intro text — saves lots of vertical space */
+  .landing-intro {
+    display: none;
+  }
+
+  /* SIDE BY SIDE on mobile */
+  .landing-choices {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 100%;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  /* Hide vertical divider — replaced by horizontal gap */
+  .landing-divider {
+    display: none;
+  }
+
+  /* Compact card */
+  .choice-card {
+    padding: 18px 14px 16px;
+    border-radius: 14px;
+  }
+
+  /* Hide verbose content — keep icon, title, tags, CTA */
+  .choice-desc { display: none; }
+  .choice-number { display: none; }
+
+  /* Compact icon */
+  .choice-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .choice-icon svg { width: 20px; height: 20px; }
+
+  /* Smaller title */
+  .choice-title {
+    font-size: 1.45rem;
+    margin-bottom: 8px;
+  }
+
+  /* Compact tags — vertical, fewer shown */
+  .choice-tags {
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 14px;
+    flex-wrap: nowrap;
+  }
+  .choice-tags li {
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Compact CTA button */
+  .choice-cta {
+    padding: 9px 12px;
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+    gap: 6px;
+    border-radius: 5px;
+    width: 100%;
+    justify-content: center;
+  }
+  .choice-cta svg { width: 13px; height: 13px; }
+
+  /* Tiny footer */
+  .landing-footer {
+    padding: 12px;
+  }
+  .landing-footer p {
+    font-size: 0.58rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .choice-card { padding: 14px 10px 12px; }
+  .choice-title { font-size: 1.2rem; }
+  .choice-tags li { font-size: 0.62rem; }
+  .choice-cta { padding: 8px 10px; font-size: 0.62rem; }
+}
