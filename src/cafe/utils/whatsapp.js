@@ -1,4 +1,4 @@
-const OWNER_PHONE = '919263975506';
+const OWNER_PHONE = '917482079243';
 
 export function formatOrderMessage(cartItems, customerInfo) {
   const itemLines = cartItems
@@ -25,7 +25,7 @@ ${itemLines}
 💰 *Total: ₹${total}*
 ${customerInfo.notes ? `\n📝 *Note:* ${customerInfo.notes}` : ''}
 ━━━━━━━━━━━━━━━━━━
-📍 _Cafe-007, Tarapur, Munger_`;
+📍 _Cafe-007, Deoghar Rd, Tarapur, Munger 813221_`;
 
   return message;
 }

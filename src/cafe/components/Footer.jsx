@@ -27,11 +27,8 @@ export default function Footer() {
 
             <div className="footer__link-group">
               <h4 className="footer__link-title">Contact</h4>
-              <a href="tel:+919263975506" className="footer__link">
-                <Phone size={12} /> +91 92639 75506
-              </a>
-              <a href="tel:+919304478850" className="footer__link">
-                <Phone size={12} /> +91 93044 78850
+              <a href="tel:+917482079243" className="footer__link">
+                <Phone size={12} /> +91 7482079243
               </a>
               <span className="footer__link">
                 <Clock size={12} /> 10 AM – 10 PM Daily
@@ -48,7 +45,7 @@ export default function Footer() {
           </p>
           <p className="footer__credit">
             <MapPin size={12} />
-            Tarapur, Munger, Bihar
+            Opposite Food Plaza, Deoghar Rd, Tarapur, Munger, Bihar 813221
           </p>
         </div>
       </div>

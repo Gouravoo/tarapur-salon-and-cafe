@@ -98,7 +98,7 @@ export default function Hero() {
             <br />
             <span className="hero-location">
               <FiCalendar size={13} />
-              9XM Salon · Opp. Food Plaza, Tarapur, Munger
+              9XM Salon · Opp. Food Plaza, Deoghar Rd, Tarapur, Munger 813221
             </span>
           </motion.p>
 

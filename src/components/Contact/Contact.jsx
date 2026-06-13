@@ -7,8 +7,8 @@ const details = [
   {
     icon: <FiMapPin />,
     label: 'Our Location',
-    value: 'Opposite Food Plaza, Tarapur,\nMunger, Bihar',
-    link: 'https://maps.google.com/?q=Tarapur+Munger+Bihar',
+    value: 'Opposite Food Plaza, Deoghar Rd, Tarapur,\nMunger, Bihar 813221',
+    link: 'https://maps.google.com/?q=25.091642,86.662898',
     linkLabel: 'Get Directions',
   },
   {

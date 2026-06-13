@@ -6,7 +6,7 @@ const features = [
   { icon: <FiAward />, title: 'Certified Experts', desc: 'All stylists are trained and certified professionals.' },
   { icon: <FiStar />, title: 'Premium Products', desc: 'We use only top international grooming brands.' },
   { icon: <FiShield />, title: 'Hygiene First', desc: 'Strict sanitization protocols after every client.' },
-  { icon: <FiMapPin />, title: 'Prime Location', desc: 'Opposite Food Plaza, Tarapur, Munger, Bihar.' },
+  { icon: <FiMapPin />, title: 'Prime Location', desc: 'Opposite Food Plaza, Deoghar Rd, Tarapur, Munger, Bihar 813221.' },
 ]
 
 export default function About() {

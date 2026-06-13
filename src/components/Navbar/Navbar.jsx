@@ -126,7 +126,7 @@ export default function Navbar() {
               </motion.div>
             </nav>
             <div className="mobile-footer">
-              <p>Opposite Food Plaza, Tarapur, Munger</p>
+              <p>Opposite Food Plaza, Deoghar Rd, Tarapur, Munger 813221</p>
               <p>Mon–Sun: 9 AM – 8 PM</p>
             </div>
           </motion.div>

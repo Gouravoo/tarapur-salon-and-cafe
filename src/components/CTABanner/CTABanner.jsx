@@ -30,7 +30,7 @@ export default function CTABanner() {
           <p className="cta-desc">
             Walk in or book ahead. Our expert stylists are waiting to craft your perfect style.
             <br />
-            9XM Salon — Opposite Food Plaza, Tarapur, Munger.
+            9XM Salon — Opposite Food Plaza, Deoghar Rd, Tarapur, Munger 813221.
           </p>
           <div className="cta-actions">
             <Link to="contact" smooth duration={800} offset={-80}>

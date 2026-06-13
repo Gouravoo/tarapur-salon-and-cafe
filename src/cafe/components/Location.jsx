@@ -36,7 +36,7 @@ export default function Location() {
         <div className="location__content">
           <div className="location__map glass-card">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.5!2d86.4744!3d25.3742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDIyJzI3LjEiTiA4NsKwMjgnMjcuOCJF!5e0!3m2!1sen!2sin!4v1"
+              src="https://maps.google.com/maps?q=25.091642,86.662898&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: 'var(--radius-lg)' }}
@@ -55,8 +55,8 @@ export default function Location() {
               <div>
                 <h4 className="location__card-title">Address</h4>
                 <p className="location__card-text">
-                  In front of Food Plaza,<br />
-                  Tarapur, Munger, Bihar
+                  Opposite Food Plaza, Deoghar Rd,<br />
+                  Tarapur, Munger, Bihar 813221
                 </p>
               </div>
             </div>
@@ -68,15 +68,13 @@ export default function Location() {
               <div>
                 <h4 className="location__card-title">Contact</h4>
                 <p className="location__card-text">
-                  <a href="tel:+919263975506" className="location__phone">+91 92639 75506</a>
-                  <br />
-                  <a href="tel:+919304478850" className="location__phone">+91 93044 78850</a>
+                  <a href="tel:+917482079243" className="location__phone">+91 7482079243</a>
                 </p>
               </div>
             </div>
 
             <a
-              href="https://www.google.com/maps/search/Cafe+007+Tarapur+Munger+Bihar"
+              href="https://www.google.com/maps/search/?api=1&query=25.091642,86.662898"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold location__directions-btn"

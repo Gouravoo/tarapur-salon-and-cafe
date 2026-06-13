@@ -34,7 +34,7 @@ export default function Landing() {
           <span className="landing-logo-007">007</span>
           <span className="landing-logo-tarapur">TARAPUR</span>
         </div>
-        <p className="landing-header-sub">Tarapur, Munger · Bihar</p>
+        <p className="landing-header-sub">Deoghar Rd, Tarapur, Munger 813221</p>
       </motion.header>
 
       {/* Main content */}

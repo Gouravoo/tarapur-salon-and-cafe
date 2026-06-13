@@ -62,7 +62,7 @@ export default function Footer() {
             <h4 className="footer-col-title">Find Us</h4>
             <div className="footer-contact-item">
               <FiMapPin />
-              <span>Opp. Food Plaza, Tarapur, Munger, Bihar</span>
+              <span>Opposite Food Plaza, Deoghar Rd, Tarapur, Munger, Bihar 813221</span>
             </div>
             <div className="footer-contact-item">
               <FiClock />
