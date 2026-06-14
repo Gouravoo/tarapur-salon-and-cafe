@@ -56,62 +56,10 @@ export default function Landing() {
 
         {/* Choice Cards */}
         <div className="landing-choices">
-          {/* Salon Card */}
-          <motion.div
-            className={`choice-card choice-card--salon ${hovered === 'cafe' ? 'choice-card--dimmed' : ''}`}
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            onHoverStart={() => setHovered('salon')}
-            onHoverEnd={() => setHovered(null)}
-            onClick={() => navigate('/salon')}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="choice-bg choice-bg--salon" />
-            <div className="choice-content">
-              <div className="choice-icon choice-icon--salon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 3a2 2 0 0 1 2 2c0 1.1-.9 2-2 2a2 2 0 0 1-2-2 2 2 0 0 1 2-2"/>
-                  <path d="M18 3a2 2 0 0 1 2 2c0 1.1-.9 2-2 2a2 2 0 0 1-2-2 2 2 0 0 1 2-2"/>
-                  <path d="M6 7c0 6.08 2.686 11 6 11s6-4.92 6-11"/>
-                  <line x1="12" y1="7" x2="12" y2="18"/>
-                </svg>
-              </div>
-              <div className="choice-number">01</div>
-              <h2 className="choice-title">9XM Salon</h2>
-              <p className="choice-desc">Premium men's grooming. Expert cuts, beard styling, facials & more. Tarapur's finest.</p>
-              <ul className="choice-tags">
-                <li>✦ Haircut & Fade</li>
-                <li>✦ Beard Grooming</li>
-                <li>✦ Skin & Facial</li>
-                <li>✦ Hair Color & Spa</li>
-                <li>❄️ Fully AC</li>
-              </ul>
-              <div className="choice-cta">
-                <span>Enter Salon</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-            </div>
-            <div className="choice-glow choice-glow--salon" />
-          </motion.div>
-
-          {/* Divider */}
-          <motion.div
-            className="landing-divider"
-            initial={{ opacity: 0, scaleY: 0 }}
-            animate={{ opacity: 1, scaleY: 1 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="divider-line" />
-            <span className="divider-or">OR</span>
-            <div className="divider-line" />
-          </motion.div>
-
           {/* Cafe Card */}
           <motion.div
             className={`choice-card choice-card--cafe ${hovered === 'salon' ? 'choice-card--dimmed' : ''}`}
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             onHoverStart={() => setHovered('cafe')}
@@ -131,7 +79,7 @@ export default function Landing() {
                   <line x1="14" y1="2" x2="14" y2="4"/>
                 </svg>
               </div>
-              <div className="choice-number">02</div>
+              <div className="choice-number">01</div>
               <h2 className="choice-title">Cafe 007</h2>
               <p className="choice-desc">Artisan coffee, fresh snacks, burgers & more. Your favourite hangout in Tarapur.</p>
               <ul className="choice-tags">
@@ -146,6 +94,58 @@ export default function Landing() {
               </div>
             </div>
             <div className="choice-glow choice-glow--cafe" />
+          </motion.div>
+
+          {/* Divider */}
+          <motion.div
+            className="landing-divider"
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 1, scaleY: 1 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="divider-line" />
+            <span className="divider-or">OR</span>
+            <div className="divider-line" />
+          </motion.div>
+
+          {/* Salon Card */}
+          <motion.div
+            className={`choice-card choice-card--salon ${hovered === 'cafe' ? 'choice-card--dimmed' : ''}`}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            onHoverStart={() => setHovered('salon')}
+            onHoverEnd={() => setHovered(null)}
+            onClick={() => navigate('/salon')}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="choice-bg choice-bg--salon" />
+            <div className="choice-content">
+              <div className="choice-icon choice-icon--salon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M6 3a2 2 0 0 1 2 2c0 1.1-.9 2-2 2a2 2 0 0 1-2-2 2 2 0 0 1 2-2"/>
+                  <path d="M18 3a2 2 0 0 1 2 2c0 1.1-.9 2-2 2a2 2 0 0 1-2-2 2 2 0 0 1 2-2"/>
+                  <path d="M6 7c0 6.08 2.686 11 6 11s6-4.92 6-11"/>
+                  <line x1="12" y1="7" x2="12" y2="18"/>
+                </svg>
+              </div>
+              <div className="choice-number">02</div>
+              <h2 className="choice-title">9XM Salon</h2>
+              <p className="choice-desc">Premium men's grooming. Expert cuts, beard styling, facials & more. Tarapur's finest.</p>
+              <ul className="choice-tags">
+                <li>✦ Haircut & Fade</li>
+                <li>✦ Beard Grooming</li>
+                <li>✦ Skin & Facial</li>
+                <li>✦ Hair Color & Spa</li>
+                <li>❄️ Fully AC</li>
+              </ul>
+              <div className="choice-cta">
+                <span>Enter Salon</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+            <div className="choice-glow choice-glow--salon" />
           </motion.div>
         </div>
       </main>
